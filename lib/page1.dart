@@ -50,21 +50,26 @@ class _Page1State extends State<Page1> {
             onTap: () {
               Navigator.of(context).push(
                 MaterialPageRoute(
-                  builder: (context) =>
-                      Page2(tag: "item ${myList[index]["id"]}"),
+                  builder: (context) => Page2(
+                      tag: "item ${myList[index]["id"]}", item: myList[index]),
                 ),
               );
             },
             child: Container(
+              color: Colors.amber,
+              margin: EdgeInsets.all(10),
               height: 200,
               child: Row(
                 children: [
                   Hero(
                     tag: "item ${myList[index]["id"]}",
-                    child: Image.network(
-                      myList[index]["image"],
-                      width: 200,
-                      fit: BoxFit.cover,
+                    child: Container(
+                      height: 200,
+                      child: Image.network(
+                        myList[index]["image"],
+                        width: 200,
+                        fit: BoxFit.cover,
+                      ),
                     ),
                   ),
                   Text("Image ${myList[index]["id"]}"),

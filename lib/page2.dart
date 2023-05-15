@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 
 class Page2 extends StatefulWidget {
-  const Page2({super.key, required this.tag});
+  const Page2({super.key, required this.tag, required this.item});
 
   final String tag;
+  final item;
   @override
   State<Page2> createState() => _Page2State();
 }
@@ -18,8 +19,7 @@ class _Page2State extends State<Page2> {
       body: Hero(
         tag: widget.tag,
         child: Container(
-          child: Image.network(
-              "https://png.pngtree.com/png-clipart/20201216/ourlarge/pngtree-blue-cute-cartoon-animal-baby-shark-clipart-png-image_2554393.jpg"),
+          child: Image.network(widget.item["image"]),
         ),
       ),
     );
